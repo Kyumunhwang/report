@@ -1,0 +1,62 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Environment Variables & Secrets
+.env
+.env.*
+secrets.toml
+
+# Streamlit local config & run-time data
+.streamlit/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Office Temporary Files (Word / Excel lock files)
+~$*.docx
+~$*.xlsx
+*.tmp
+
+# Actual Student Data & Generated Outputs (Privacy Protection)
+data/
+output/
+downloads/
+*.zip
+private_data/
