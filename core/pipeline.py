@@ -4,9 +4,10 @@ import pandas as pd
 
 class ExcelDataPipeline:
 
-  def __init__(self, school_year: str, semester: str):
+  def __init__(self, school_year: str, semester: str, default_grade: str = ""):
     self.school_year = school_year
     self.semester = semester
+    self.default_grade = default_grade.strip()
     # Evaluation rating criteria: E=Excellent, VG=Very Good, G=Good, S=Satisfactory, N=Needs Improvement
     self.valid_slo = {"E", "VG", "G", "S", "N", ""}
 
@@ -47,7 +48,7 @@ class ExcelDataPipeline:
           "school_year": self.school_year,
           "semester": self.semester,
           "student_name": str(row.get("student_name", "")).strip(),
-          "grade": str(row.get("grade", row.get("Grade", row.get("학년", "")))).strip(),
+          "grade": str(row.get("grade", row.get("Grade", row.get("학년", "")))).strip() or self.default_grade,
           # Curricular 4개 빈칸
           "club_hours": str(row.get("club_hours", "")).strip(),
           "club_content": str(row.get("club_content", "")).strip(),

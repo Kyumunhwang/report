@@ -17,6 +17,7 @@ with st.sidebar:
     st.header("Configuration")
     school_year = st.text_input("School Year", value="2025-2026")
     semester = st.selectbox("Semester", options=["Semester 1", "Semester 2", "Summer Session"])
+    grade_input = st.text_input("Default Grade (Optional)", value="Grade 10", help="Used if the Curricular Excel does not have a grade column.")
 
 st.subheader("1. Download Sample Excel Templates")
 st.caption("Download the pre-formatted Excel template files below, fill in your student data, and upload them in the next section.")
@@ -136,7 +137,7 @@ if st.button("Generate Report Cards", type="primary", use_container_width=True):
         st.error("Please upload all 5 required Excel files before generating report cards.")
     else:
         with st.spinner("Processing Excel data and compiling student records..."):
-            pipeline = ExcelDataPipeline(school_year=school_year, semester=semester)
+            pipeline = ExcelDataPipeline(school_year=school_year, semester=semester, default_grade=grade_input)
             students, warnings = pipeline.process(
                 file_curricular=file_curricular,
                 file_awards=file_awards,
