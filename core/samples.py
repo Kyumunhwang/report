@@ -13,6 +13,7 @@ class SampleDataGenerator:
         data = [
             {
                 "student_id": "2026001",
+                "grade": "Grade 10",
                 "student_name": "Alice Kim",
                 "club_hours": "30",
                 "club_content": "Active participation in Coding Club and algorithm study.",
@@ -21,6 +22,7 @@ class SampleDataGenerator:
             },
             {
                 "student_id": "2026002",
+                "grade": "Grade 10",
                 "student_name": "Brian Park",
                 "club_hours": "25",
                 "club_content": "Led debate sessions in Model United Nations.",

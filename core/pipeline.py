@@ -47,6 +47,7 @@ class ExcelDataPipeline:
           "school_year": self.school_year,
           "semester": self.semester,
           "student_name": str(row.get("student_name", "")).strip(),
+          "grade": str(row.get("grade", row.get("Grade", row.get("학년", "")))).strip(),
           # Curricular 4개 빈칸
           "club_hours": str(row.get("club_hours", "")).strip(),
           "club_content": str(row.get("club_content", "")).strip(),
